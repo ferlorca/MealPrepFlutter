@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "703772897591",
+    "firebase_url": "https://mealprep-13a67.firebaseio.com",
+    "project_id": "mealprep-13a67",
+    "storage_bucket": "mealprep-13a67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703772897591:android:890b62e2fadb0d7d1d6ab2",
+        "android_client_info": {
+          "package_name": "com.fernando.mealprepapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703772897591-6f1one25ilecafmeea0i95vj08bpvl9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpyJ5DGybp9xgzXhH_a-fSUetXBxMLYhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703772897591-6f1one25ilecafmeea0i95vj08bpvl9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
