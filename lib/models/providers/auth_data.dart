@@ -6,22 +6,23 @@ import 'package:mealprepapp/utilities/network_helper.dart';
 
 class AuthData with ChangeNotifier {
   final _auth = FirebaseAuth.instance;
-  FirebaseUser _user;
+
+  User _user;
   bool _loading = false;
   ErrorHandler _error;
   String _role;
-  IdTokenResult _token;
+  String _token;
 
   bool get loading => _loading;
   ErrorHandler get error => _error;
-  FirebaseUser get user => _user;
+  User get user => _user;
   String get role => _role;
-  String get token => _token.token;
+  String get token => _token;
 
-  Future<FirebaseUser> getCurrentUserFromFirebase() async {
+  Future<User> getCurrentUserFromFirebase() async {
     setLoading(true);
     try {
-      if (_user == null) _user = await _auth.currentUser();
+      if (_user == null) _user = _auth.currentUser;
     } catch (e) {
       _error = ErrorHandler.handleError(e);
     }
@@ -30,7 +31,7 @@ class AuthData with ChangeNotifier {
     return _user;
   }
 
-  Future<FirebaseUser> registerUserWithEmailAndPassword(
+  Future<User> registerUserWithEmailAndPassword(
       String email, String password) async {
     try {
       setLoading(true);
@@ -51,7 +52,7 @@ class AuthData with ChangeNotifier {
     return _user;
   }
 
-  Future<FirebaseUser> loginUserWithEmailAndPassword(
+  Future<User> loginUserWithEmailAndPassword(
       String email, String password) async {
     try {
       setLoading(true);
@@ -97,7 +98,7 @@ class AuthData with ChangeNotifier {
     }
   }
 
-  Future updateAuthDataWithUser(FirebaseUser _user) async {
+  Future updateAuthDataWithUser(User _user) async {
     setLoading(true);
     if (_token == null) {
       _token = await _user.getIdToken();

@@ -65,8 +65,10 @@ class _UserScreenState extends State<UserScreen> {
                         ),
                       ),
                     ),
-                    child: FlatButton(
-                      color: Colors.blueGrey.shade700,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        backgroundColor:MaterialStateProperty.all<Color>(Colors.green)
+                      ),
                       onPressed: () {
                         Navigator.push(
                             context,
